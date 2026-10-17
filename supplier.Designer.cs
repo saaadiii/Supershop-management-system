@@ -31,9 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(supplier));
             dgvsupplier = new DataGridView();
-            panel1 = new Panel();
-            button1 = new Button();
-            label1 = new Label();
             ID = new DataGridViewTextBoxColumn();
             No = new DataGridViewTextBoxColumn();
             Pcode = new DataGridViewTextBoxColumn();
@@ -44,6 +41,9 @@
             Price = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
+            panel1 = new Panel();
+            addbtn = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvsupplier).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -72,45 +72,9 @@
             dgvsupplier.Size = new Size(1020, 519);
             dgvsupplier.TabIndex = 4;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Indigo;
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 519);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1020, 88);
-            panel1.TabIndex = 3;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Lavender;
-            button1.FlatAppearance.BorderColor = Color.White;
-            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 128, 255);
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 128, 255);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(923, 28);
-            button1.Name = "button1";
-            button1.Size = new Size(70, 42);
-            button1.TabIndex = 2;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(39, 28);
-            label1.Name = "label1";
-            label1.Size = new Size(160, 22);
-            label1.TabIndex = 1;
-            label1.Text = "Manage Supplier";
-            // 
             // ID
             // 
+            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             ID.HeaderText = "ID";
             ID.MinimumWidth = 6;
             ID.Name = "ID";
@@ -132,7 +96,7 @@
             Pcode.MinimumWidth = 6;
             Pcode.Name = "Pcode";
             Pcode.Visible = false;
-            Pcode.Width = 93;
+            Pcode.Width = 125;
             // 
             // Barcode
             // 
@@ -193,6 +157,45 @@
             Delete.Name = "Delete";
             Delete.Width = 6;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Indigo;
+            panel1.Controls.Add(addbtn);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 519);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1020, 88);
+            panel1.TabIndex = 3;
+            // 
+            // addbtn
+            // 
+            addbtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            addbtn.BackColor = Color.Lavender;
+            addbtn.FlatAppearance.BorderColor = Color.White;
+            addbtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 128, 255);
+            addbtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 128, 255);
+            addbtn.FlatStyle = FlatStyle.Flat;
+            addbtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addbtn.Location = new Point(923, 28);
+            addbtn.Name = "addbtn";
+            addbtn.Size = new Size(70, 42);
+            addbtn.TabIndex = 2;
+            addbtn.Text = "Add";
+            addbtn.UseVisualStyleBackColor = false;
+            addbtn.Click += addbtn_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(39, 28);
+            label1.Name = "label1";
+            label1.Size = new Size(160, 22);
+            label1.TabIndex = 1;
+            label1.Text = "Manage Supplier";
+            // 
             // supplier
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -214,7 +217,7 @@
 
         private DataGridView dgvsupplier;
         private Panel panel1;
-        private Button button1;
+        private Button addbtn;
         private Label label1;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn No;

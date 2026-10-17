@@ -97,8 +97,11 @@ namespace Supershop
 
         private void supplier_Click(object sender, EventArgs e)
         {
+          
             hidesubmenu();
+            openChildForm(new Supershop.supplier());
         }
+        
 
         private void Record_Click(object sender, EventArgs e)
         {

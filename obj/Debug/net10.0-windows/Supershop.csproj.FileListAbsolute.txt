@@ -69,3 +69,5 @@ E:\C#\Supershop\bin\Debug\net10.0-windows\MetroFramework.Design.dll
 E:\C#\Supershop\bin\Debug\net10.0-windows\MetroFramework.Fonts.dll
 E:\C#\Supershop\bin\Debug\net10.0-windows\MetroFramework.dll
 E:\C#\Supershop\obj\Debug\net10.0-windows\Supershop.supplier.resources
+E:\C#\Supershop\obj\Debug\net10.0-windows\Supershop.SupplierModule.resources
+E:\C#\Supershop\obj\Debug\net10.0-windows\Supershop.sourcelink.json
