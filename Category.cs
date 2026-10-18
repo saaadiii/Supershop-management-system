@@ -113,6 +113,11 @@ namespace Supershop
 
             moduleform.ShowDialog();
         }
+
+        private void Category_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

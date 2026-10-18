@@ -50,9 +50,10 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Bottom;
             panel1.ForeColor = SystemColors.ActiveCaptionText;
-            panel1.Location = new Point(0, 515);
+            panel1.Location = new Point(0, 443);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(997, 84);
+            panel1.Size = new Size(870, 73);
             panel1.TabIndex = 0;
             // 
             // Add
@@ -64,10 +65,12 @@
             Add.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 192, 255);
             Add.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             Add.FlatStyle = FlatStyle.Flat;
+            Add.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Add.ForeColor = SystemColors.ActiveCaptionText;
-            Add.Location = new Point(901, 25);
+            Add.Location = new Point(783, 21);
+            Add.Margin = new Padding(3, 2, 3, 2);
             Add.Name = "Add";
-            Add.Size = new Size(84, 40);
+            Add.Size = new Size(76, 35);
             Add.TabIndex = 1;
             Add.Text = "Add";
             Add.UseVisualStyleBackColor = false;
@@ -76,8 +79,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(33, 25);
+            label1.Location = new Point(30, 21);
             label1.Name = "label1";
             label1.Size = new Size(141, 22);
             label1.TabIndex = 0;
@@ -93,7 +97,7 @@
             dgvbrand.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Edit, Delete });
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.Lavender;
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.ButtonHighlight;
@@ -102,10 +106,11 @@
             dgvbrand.Dock = DockStyle.Fill;
             dgvbrand.EnableHeadersVisualStyles = false;
             dgvbrand.Location = new Point(0, 0);
+            dgvbrand.Margin = new Padding(3, 2, 3, 2);
             dgvbrand.Name = "dgvbrand";
             dgvbrand.RowHeadersVisible = false;
             dgvbrand.RowHeadersWidth = 51;
-            dgvbrand.Size = new Size(997, 515);
+            dgvbrand.Size = new Size(870, 443);
             dgvbrand.TabIndex = 1;
             dgvbrand.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -115,7 +120,7 @@
             Column1.HeaderText = "No";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
-            Column1.Width = 64;
+            Column1.Width = 62;
             // 
             // Column2
             // 
@@ -155,14 +160,14 @@
             // 
             // Brand
             // 
-            AutoScaleDimensions = new SizeF(11F, 22F);
+            AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(997, 599);
+            ClientSize = new Size(870, 516);
             Controls.Add(dgvbrand);
             Controls.Add(panel1);
-            Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(4, 3, 4, 3);
+            Margin = new Padding(4, 2, 4, 2);
             Name = "Brand";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Brand";

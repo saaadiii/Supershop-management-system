@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(supplier));
             dgvsupplier = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
@@ -51,25 +53,30 @@
             // dgvsupplier
             // 
             dgvsupplier.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dgvsupplier.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvsupplier.BackgroundColor = SystemColors.InactiveBorder;
             dgvsupplier.ColumnHeadersHeight = 30;
             dgvsupplier.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvsupplier.Columns.AddRange(new DataGridViewColumn[] { ID, No, Pcode, Barcode, Description, Brand, Category, Price, Edit, Delete });
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Lavender;
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgvsupplier.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Lavender;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvsupplier.DefaultCellStyle = dataGridViewCellStyle2;
             dgvsupplier.Dock = DockStyle.Fill;
             dgvsupplier.EnableHeadersVisualStyles = false;
             dgvsupplier.Location = new Point(0, 0);
+            dgvsupplier.Margin = new Padding(4);
             dgvsupplier.Name = "dgvsupplier";
             dgvsupplier.RowHeadersVisible = false;
             dgvsupplier.RowHeadersWidth = 51;
-            dgvsupplier.Size = new Size(1020, 519);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dgvsupplier.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dgvsupplier.Size = new Size(873, 476);
             dgvsupplier.TabIndex = 4;
             // 
             // ID
@@ -87,7 +94,7 @@
             No.HeaderText = "No";
             No.MinimumWidth = 6;
             No.Name = "No";
-            No.Width = 58;
+            No.Width = 62;
             // 
             // Pcode
             // 
@@ -111,7 +118,7 @@
             Description.HeaderText = "Contact Person";
             Description.MinimumWidth = 6;
             Description.Name = "Description";
-            Description.Width = 136;
+            Description.Width = 162;
             // 
             // Brand
             // 
@@ -119,7 +126,7 @@
             Brand.HeaderText = "Phone";
             Brand.MinimumWidth = 6;
             Brand.Name = "Brand";
-            Brand.Width = 79;
+            Brand.Width = 90;
             // 
             // Category
             // 
@@ -127,7 +134,7 @@
             Category.HeaderText = "Email";
             Category.MinimumWidth = 6;
             Category.Name = "Category";
-            Category.Width = 75;
+            Category.Width = 82;
             // 
             // Price
             // 
@@ -135,7 +142,7 @@
             Price.HeaderText = "Fax";
             Price.MinimumWidth = 6;
             Price.Name = "Price";
-            Price.Width = 59;
+            Price.Width = 67;
             // 
             // Edit
             // 
@@ -163,9 +170,10 @@
             panel1.Controls.Add(addbtn);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 519);
+            panel1.Location = new Point(0, 476);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1020, 88);
+            panel1.Size = new Size(873, 84);
             panel1.TabIndex = 3;
             // 
             // addbtn
@@ -177,9 +185,10 @@
             addbtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 128, 255);
             addbtn.FlatStyle = FlatStyle.Flat;
             addbtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addbtn.Location = new Point(923, 28);
+            addbtn.Location = new Point(772, 27);
+            addbtn.Margin = new Padding(4);
             addbtn.Name = "addbtn";
-            addbtn.Size = new Size(70, 42);
+            addbtn.Size = new Size(88, 40);
             addbtn.TabIndex = 2;
             addbtn.Text = "Add";
             addbtn.UseVisualStyleBackColor = false;
@@ -190,7 +199,8 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(39, 28);
+            label1.Location = new Point(49, 27);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(160, 22);
             label1.TabIndex = 1;
@@ -198,14 +208,17 @@
             // 
             // supplier
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1020, 607);
+            ClientSize = new Size(873, 560);
             ControlBox = false;
             Controls.Add(dgvsupplier);
             Controls.Add(panel1);
+            Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Margin = new Padding(4);
             Name = "supplier";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Supplier";
             ((System.ComponentModel.ISupportInitialize)dgvsupplier).EndInit();
             panel1.ResumeLayout(false);

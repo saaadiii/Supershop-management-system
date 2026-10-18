@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product));
             panel1 = new Panel();
             textSearch = new TextBox();
@@ -57,33 +60,34 @@
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 470);
+            panel1.Location = new Point(0, 463);
             panel1.Name = "panel1";
-            panel1.Size = new Size(902, 88);
+            panel1.Size = new Size(948, 79);
             panel1.TabIndex = 0;
             // 
             // textSearch
             // 
-            textSearch.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textSearch.Location = new Point(353, 28);
+            textSearch.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textSearch.Location = new Point(397, 25);
             textSearch.Multiline = true;
             textSearch.Name = "textSearch";
             textSearch.PlaceholderText = "Search products...";
-            textSearch.Size = new Size(260, 27);
+            textSearch.Size = new Size(274, 25);
             textSearch.TabIndex = 3;
             textSearch.TextChanged += textSearch_TextChanged;
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button1.BackColor = Color.Lavender;
             button1.FlatAppearance.BorderColor = Color.White;
             button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 128, 255);
             button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 128, 255);
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(798, 18);
+            button1.Location = new Point(858, 25);
             button1.Name = "button1";
-            button1.Size = new Size(70, 42);
+            button1.Size = new Size(79, 38);
             button1.TabIndex = 2;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = false;
@@ -94,7 +98,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(39, 28);
+            label1.Location = new Point(44, 25);
             label1.Name = "label1";
             label1.Size = new Size(166, 22);
             label1.TabIndex = 1;
@@ -103,25 +107,37 @@
             // dgvproduct
             // 
             dgvproduct.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dgvproduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvproduct.BackgroundColor = SystemColors.InactiveBorder;
             dgvproduct.ColumnHeadersHeight = 30;
             dgvproduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvproduct.Columns.AddRange(new DataGridViewColumn[] { ID, No, Pcode, Barcode, Description, Brand, Category, Price, Reorder, Edit, Delete });
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Lavender;
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgvproduct.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Lavender;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvproduct.DefaultCellStyle = dataGridViewCellStyle2;
             dgvproduct.Dock = DockStyle.Fill;
             dgvproduct.EnableHeadersVisualStyles = false;
             dgvproduct.Location = new Point(0, 0);
             dgvproduct.Name = "dgvproduct";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvproduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvproduct.RowHeadersVisible = false;
             dgvproduct.RowHeadersWidth = 51;
-            dgvproduct.Size = new Size(902, 470);
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dgvproduct.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvproduct.Size = new Size(948, 463);
             dgvproduct.TabIndex = 2;
             dgvproduct.CellContentClick += dgvproduct_CellContentClick;
             // 
@@ -156,7 +172,7 @@
             Barcode.HeaderText = "Barcode";
             Barcode.MinimumWidth = 6;
             Barcode.Name = "Barcode";
-            Barcode.Width = 93;
+            Barcode.Width = 101;
             // 
             // Description
             // 
@@ -171,7 +187,7 @@
             Brand.HeaderText = "Brand";
             Brand.MinimumWidth = 6;
             Brand.Name = "Brand";
-            Brand.Width = 77;
+            Brand.Width = 80;
             // 
             // Category
             // 
@@ -179,7 +195,7 @@
             Category.HeaderText = "Category";
             Category.MinimumWidth = 6;
             Category.Name = "Category";
-            Category.Width = 98;
+            Category.Width = 107;
             // 
             // Price
             // 
@@ -187,7 +203,7 @@
             Price.HeaderText = "Price";
             Price.MinimumWidth = 6;
             Price.Name = "Price";
-            Price.Width = 70;
+            Price.Width = 74;
             // 
             // Reorder
             // 
@@ -218,11 +234,12 @@
             // 
             // Product
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(902, 558);
+            ClientSize = new Size(948, 542);
             Controls.Add(dgvproduct);
             Controls.Add(panel1);
+            Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Name = "Product";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Product";

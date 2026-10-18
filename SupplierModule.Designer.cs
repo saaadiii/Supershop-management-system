@@ -75,7 +75,7 @@
             Csncelbtn.FlatStyle = FlatStyle.Flat;
             Csncelbtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Csncelbtn.ForeColor = SystemColors.ButtonHighlight;
-            Csncelbtn.Location = new Point(425, 396);
+            Csncelbtn.Location = new Point(424, 396);
             Csncelbtn.Name = "Csncelbtn";
             Csncelbtn.Size = new Size(105, 35);
             Csncelbtn.TabIndex = 36;
@@ -92,7 +92,7 @@
             Savebtn.FlatStyle = FlatStyle.Flat;
             Savebtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Savebtn.ForeColor = SystemColors.ButtonHighlight;
-            Savebtn.Location = new Point(317, 396);
+            Savebtn.Location = new Point(316, 396);
             Savebtn.Name = "Savebtn";
             Savebtn.Size = new Size(102, 35);
             Savebtn.TabIndex = 35;
@@ -117,7 +117,7 @@
             txtsupplier.BackColor = Color.WhiteSmoke;
             txtsupplier.Location = new Point(178, 107);
             txtsupplier.Name = "txtsupplier";
-            txtsupplier.Size = new Size(443, 26);
+            txtsupplier.Size = new Size(444, 26);
             txtsupplier.TabIndex = 21;
             txtsupplier.TextChanged += productcodebtn_TextChanged;
             // 
@@ -125,7 +125,7 @@
             // 
             cancelbtn.FlatStyle = FlatStyle.Flat;
             cancelbtn.ForeColor = SystemColors.ButtonHighlight;
-            cancelbtn.Location = new Point(673, 25);
+            cancelbtn.Location = new Point(674, 25);
             cancelbtn.Name = "cancelbtn";
             cancelbtn.Size = new Size(30, 27);
             cancelbtn.TabIndex = 2;
@@ -137,7 +137,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(39, 30);
+            label1.Location = new Point(39, 29);
             label1.Name = "label1";
             label1.Size = new Size(152, 22);
             label1.TabIndex = 1;
@@ -202,7 +202,7 @@
             textadd.BackColor = Color.WhiteSmoke;
             textadd.Location = new Point(178, 152);
             textadd.Name = "textadd";
-            textadd.Size = new Size(443, 26);
+            textadd.Size = new Size(444, 26);
             textadd.TabIndex = 42;
             textadd.TextChanged += textadd_TextChanged;
             // 
@@ -211,7 +211,7 @@
             textcontact.BackColor = Color.WhiteSmoke;
             textcontact.Location = new Point(178, 203);
             textcontact.Name = "textcontact";
-            textcontact.Size = new Size(443, 26);
+            textcontact.Size = new Size(444, 26);
             textcontact.TabIndex = 43;
             textcontact.TextChanged += textcontact_TextChanged;
             // 
@@ -220,7 +220,7 @@
             textphn.BackColor = Color.WhiteSmoke;
             textphn.Location = new Point(178, 261);
             textphn.Name = "textphn";
-            textphn.Size = new Size(443, 26);
+            textphn.Size = new Size(444, 26);
             textphn.TabIndex = 44;
             textphn.TextChanged += textphn_TextChanged;
             // 
@@ -238,7 +238,7 @@
             textfax.BackColor = Color.WhiteSmoke;
             textfax.Location = new Point(448, 317);
             textfax.Name = "textfax";
-            textfax.Size = new Size(173, 26);
+            textfax.Size = new Size(174, 26);
             textfax.TabIndex = 46;
             textfax.TextChanged += textfax_TextChanged;
             // 
@@ -280,7 +280,6 @@
             Name = "SupplierModule";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SupplierModule";
-           
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

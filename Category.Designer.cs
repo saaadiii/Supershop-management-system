@@ -30,7 +30,6 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Category));
             panel1 = new Panel();
             label1 = new Label();
@@ -51,9 +50,10 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(addbtn);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 510);
+            panel1.Location = new Point(0, 484);
+            panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(991, 90);
+            panel1.Size = new Size(946, 86);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -61,7 +61,8 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(25, 27);
+            label1.Location = new Point(31, 26);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(173, 22);
             label1.TabIndex = 1;
@@ -76,9 +77,10 @@
             addbtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 128, 255);
             addbtn.FlatStyle = FlatStyle.Flat;
             addbtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addbtn.Location = new Point(891, 27);
+            addbtn.Location = new Point(821, 26);
+            addbtn.Margin = new Padding(4, 3, 4, 3);
             addbtn.Name = "addbtn";
-            addbtn.Size = new Size(75, 45);
+            addbtn.Size = new Size(94, 43);
             addbtn.TabIndex = 0;
             addbtn.Text = "Add";
             addbtn.UseVisualStyleBackColor = false;
@@ -90,32 +92,25 @@
             dataGridViewCellStyle1.BackColor = Color.Lavender;
             dgvcategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvcategory.BackgroundColor = SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvcategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvcategory.ColumnHeadersHeight = 30;
             dgvcategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvcategory.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Edit, Delete });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.Lavender;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvcategory.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Lavender;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvcategory.DefaultCellStyle = dataGridViewCellStyle2;
             dgvcategory.Dock = DockStyle.Fill;
             dgvcategory.EnableHeadersVisualStyles = false;
             dgvcategory.Location = new Point(0, 0);
+            dgvcategory.Margin = new Padding(4, 3, 4, 3);
             dgvcategory.Name = "dgvcategory";
             dgvcategory.RowHeadersVisible = false;
             dgvcategory.RowHeadersWidth = 51;
-            dgvcategory.Size = new Size(991, 510);
+            dgvcategory.Size = new Size(946, 484);
             dgvcategory.TabIndex = 2;
             dgvcategory.CellContentClick += dgvcategory_CellContentClick;
             // 
@@ -125,7 +120,7 @@
             Column1.HeaderText = "No";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
-            Column1.Width = 58;
+            Column1.Width = 62;
             // 
             // Column2
             // 
@@ -165,14 +160,17 @@
             // 
             // Category
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(991, 600);
+            ClientSize = new Size(946, 570);
             Controls.Add(dgvcategory);
             Controls.Add(panel1);
+            Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "Category";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Category";
+            Load += Category_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvcategory).EndInit();
