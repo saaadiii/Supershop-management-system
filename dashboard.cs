@@ -158,6 +158,7 @@ namespace Supershop
         private void user_Click(object sender, EventArgs e)
         {
             hidesubmenu();
+            openChildForm(new user());
         }
 
         private void posrecord_Click(object sender, EventArgs e)

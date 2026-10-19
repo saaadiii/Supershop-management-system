@@ -28,22 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            addbtn = new Button();
-            label1 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            comboBox1 = new ComboBox();
-            maskedTextBox4 = new MaskedTextBox();
-            maskedTextBox3 = new MaskedTextBox();
+            role = new ComboBox();
+            pass = new MaskedTextBox();
+            retypepass = new MaskedTextBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
-            Csncelbtn = new Button();
+            username = new MaskedTextBox();
+            Cancelbtn = new Button();
             Savebtn = new Button();
             tabPage2 = new TabPage();
+            textBox2 = new TextBox();
+            cancel = new Button();
+            save = new Button();
+            txtcurrentpass = new MaskedTextBox();
+            currentpassword = new Label();
             newpass = new Label();
             txtnewpass = new MaskedTextBox();
             txtrepass = new MaskedTextBox();
@@ -51,170 +53,144 @@
             label8 = new Label();
             txtusername = new MaskedTextBox();
             tabPage3 = new TabPage();
-            currentpassword = new Label();
-            txtcurrentpass = new MaskedTextBox();
-            button1 = new Button();
-            button2 = new Button();
-            panel1.SuspendLayout();
+            textBox1 = new TextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Indigo;
-            panel1.Controls.Add(addbtn);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Font = new Font("Tw Cen MT Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            panel1.Location = new Point(0, 456);
-            panel1.Margin = new Padding(4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1002, 84);
-            panel1.TabIndex = 4;
-            // 
-            // addbtn
-            // 
-            addbtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            addbtn.BackColor = Color.Lavender;
-            addbtn.FlatAppearance.BorderColor = Color.White;
-            addbtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 128, 255);
-            addbtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 128, 255);
-            addbtn.FlatStyle = FlatStyle.Flat;
-            addbtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addbtn.Location = new Point(1574, 27);
-            addbtn.Margin = new Padding(4);
-            addbtn.Name = "addbtn";
-            addbtn.Size = new Size(88, 40);
-            addbtn.TabIndex = 2;
-            addbtn.Text = "Add";
-            addbtn.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(49, 27);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 22);
-            label1.TabIndex = 1;
-            label1.Text = "Manage Accounts";
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
+            tabControl1.Dock = DockStyle.Bottom;
             tabControl1.Font = new Font("Tw Cen MT Condensed", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tabControl1.Location = new Point(0, 0);
+            tabControl1.Location = new Point(0, -2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1002, 449);
+            tabControl1.Size = new Size(1002, 542);
             tabControl1.TabIndex = 5;
             // 
             // tabPage1
             // 
-            tabPage1.BackColor = SystemColors.InactiveBorder;
-            tabPage1.Controls.Add(comboBox1);
-            tabPage1.Controls.Add(maskedTextBox4);
-            tabPage1.Controls.Add(maskedTextBox3);
+            tabPage1.BackColor = Color.Lavender;
+            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(role);
+            tabPage1.Controls.Add(pass);
+            tabPage1.Controls.Add(retypepass);
             tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(label4);
             tabPage1.Controls.Add(label3);
             tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(maskedTextBox1);
-            tabPage1.Controls.Add(Csncelbtn);
+            tabPage1.Controls.Add(username);
+            tabPage1.Controls.Add(Cancelbtn);
             tabPage1.Controls.Add(Savebtn);
             tabPage1.Location = new Point(4, 30);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(994, 415);
+            tabPage1.Size = new Size(994, 508);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Create Account";
             // 
-            // comboBox1
+            // role
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(234, 242);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(439, 29);
-            comboBox1.TabIndex = 17;
+            role.ForeColor = SystemColors.ActiveCaptionText;
+            role.FormattingEnabled = true;
+            role.Items.AddRange(new object[] { "Admin", "Cashier" });
+            role.Location = new Point(287, 300);
+            role.Name = "role";
+            role.Size = new Size(439, 29);
+            role.TabIndex = 17;
+            role.SelectedIndexChanged += role_SelectedIndexChanged;
             // 
-            // maskedTextBox4
+            // pass
             // 
-            maskedTextBox4.Location = new Point(234, 117);
-            maskedTextBox4.Name = "maskedTextBox4";
-            maskedTextBox4.Size = new Size(439, 27);
-            maskedTextBox4.TabIndex = 16;
+            pass.ForeColor = SystemColors.ActiveCaptionText;
+            pass.Location = new Point(287, 175);
+            pass.Name = "pass";
+            pass.Size = new Size(439, 27);
+            pass.TabIndex = 16;
+            pass.MaskInputRejected += pass_MaskInputRejected;
             // 
-            // maskedTextBox3
+            // retypepass
             // 
-            maskedTextBox3.Location = new Point(234, 175);
-            maskedTextBox3.Name = "maskedTextBox3";
-            maskedTextBox3.Size = new Size(439, 27);
-            maskedTextBox3.TabIndex = 15;
+            retypepass.ForeColor = SystemColors.ActiveCaptionText;
+            retypepass.Location = new Point(287, 233);
+            retypepass.Name = "retypepass";
+            retypepass.Size = new Size(439, 27);
+            retypepass.TabIndex = 15;
+            retypepass.MaskInputRejected += retypepass_MaskInputRejected;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(91, 242);
+            label5.Font = new Font("Tw Cen MT Condensed", 12F, FontStyle.Bold);
+            label5.ForeColor = SystemColors.ActiveCaptionText;
+            label5.Location = new Point(144, 300);
             label5.Name = "label5";
-            label5.Size = new Size(41, 21);
+            label5.Size = new Size(45, 23);
             label5.TabIndex = 12;
             label5.Text = "Role:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(91, 175);
+            label4.Font = new Font("Tw Cen MT Condensed", 12F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(144, 233);
             label4.Name = "label4";
-            label4.Size = new Size(128, 21);
+            label4.Size = new Size(141, 23);
             label4.TabIndex = 11;
             label4.Text = "Re-Type Password:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(91, 120);
+            label3.Font = new Font("Tw Cen MT Condensed", 12F, FontStyle.Bold);
+            label3.ForeColor = SystemColors.ActiveCaptionText;
+            label3.Location = new Point(144, 178);
             label3.Name = "label3";
-            label3.Size = new Size(75, 21);
+            label3.Size = new Size(82, 23);
             label3.TabIndex = 10;
             label3.Text = "Password:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(91, 64);
+            label2.Font = new Font("Tw Cen MT Condensed", 12F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(144, 122);
             label2.Name = "label2";
-            label2.Size = new Size(77, 21);
+            label2.Size = new Size(85, 23);
             label2.TabIndex = 9;
             label2.Text = "Username:";
             // 
-            // maskedTextBox1
+            // username
             // 
-            maskedTextBox1.Location = new Point(234, 64);
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(439, 27);
-            maskedTextBox1.TabIndex = 8;
+            username.ForeColor = SystemColors.ActiveCaptionText;
+            username.Location = new Point(287, 122);
+            username.Name = "username";
+            username.Size = new Size(439, 27);
+            username.TabIndex = 8;
+            username.MaskInputRejected += username_MaskInputRejected;
             // 
-            // Csncelbtn
+            // Cancelbtn
             // 
-            Csncelbtn.BackColor = Color.Crimson;
-            Csncelbtn.FlatAppearance.BorderSize = 2;
-            Csncelbtn.FlatAppearance.MouseDownBackColor = Color.Red;
-            Csncelbtn.FlatAppearance.MouseOverBackColor = Color.Red;
-            Csncelbtn.FlatStyle = FlatStyle.Flat;
-            Csncelbtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Csncelbtn.ForeColor = SystemColors.ButtonHighlight;
-            Csncelbtn.Location = new Point(763, 362);
-            Csncelbtn.Name = "Csncelbtn";
-            Csncelbtn.Size = new Size(105, 35);
-            Csncelbtn.TabIndex = 7;
-            Csncelbtn.Text = "Cancel";
-            Csncelbtn.UseVisualStyleBackColor = false;
+            Cancelbtn.BackColor = Color.Crimson;
+            Cancelbtn.FlatAppearance.BorderSize = 2;
+            Cancelbtn.FlatAppearance.MouseDownBackColor = Color.Red;
+            Cancelbtn.FlatAppearance.MouseOverBackColor = Color.Red;
+            Cancelbtn.FlatStyle = FlatStyle.Flat;
+            Cancelbtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Cancelbtn.ForeColor = SystemColors.ButtonHighlight;
+            Cancelbtn.Location = new Point(621, 418);
+            Cancelbtn.Name = "Cancelbtn";
+            Cancelbtn.Size = new Size(105, 35);
+            Cancelbtn.TabIndex = 7;
+            Cancelbtn.Text = "Cancel";
+            Cancelbtn.UseVisualStyleBackColor = false;
+            Cancelbtn.Click += Cancelbtn_Click;
             // 
             // Savebtn
             // 
@@ -225,18 +201,20 @@
             Savebtn.FlatStyle = FlatStyle.Flat;
             Savebtn.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Savebtn.ForeColor = SystemColors.ButtonHighlight;
-            Savebtn.Location = new Point(655, 362);
+            Savebtn.Location = new Point(513, 418);
             Savebtn.Name = "Savebtn";
             Savebtn.Size = new Size(102, 35);
             Savebtn.TabIndex = 6;
             Savebtn.Text = "Save";
             Savebtn.UseVisualStyleBackColor = false;
+            Savebtn.Click += Savebtn_Click;
             // 
             // tabPage2
             // 
-            tabPage2.BackColor = SystemColors.InactiveBorder;
-            tabPage2.Controls.Add(button1);
-            tabPage2.Controls.Add(button2);
+            tabPage2.BackColor = Color.Lavender;
+            tabPage2.Controls.Add(textBox2);
+            tabPage2.Controls.Add(cancel);
+            tabPage2.Controls.Add(save);
             tabPage2.Controls.Add(txtcurrentpass);
             tabPage2.Controls.Add(currentpassword);
             tabPage2.Controls.Add(newpass);
@@ -248,57 +226,135 @@
             tabPage2.Location = new Point(4, 30);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(994, 415);
+            tabPage2.Size = new Size(994, 508);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Change Password";
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.Lavender;
+            textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox2.ForeColor = SystemColors.ActiveCaptionText;
+            textBox2.Location = new Point(392, 43);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(194, 25);
+            textBox2.TabIndex = 0;
+            textBox2.Text = "Manage Accounts";
+            // 
+            // cancel
+            // 
+            cancel.BackColor = Color.Crimson;
+            cancel.FlatAppearance.BorderSize = 2;
+            cancel.FlatAppearance.MouseDownBackColor = Color.Red;
+            cancel.FlatAppearance.MouseOverBackColor = Color.Red;
+            cancel.FlatStyle = FlatStyle.Flat;
+            cancel.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancel.ForeColor = SystemColors.ButtonHighlight;
+            cancel.Location = new Point(629, 419);
+            cancel.Name = "cancel";
+            cancel.Size = new Size(105, 35);
+            cancel.TabIndex = 28;
+            cancel.Text = "Cancel";
+            cancel.UseVisualStyleBackColor = false;
+            cancel.Click += cancel_Click;
+            // 
+            // save
+            // 
+            save.BackColor = Color.CornflowerBlue;
+            save.FlatAppearance.BorderSize = 2;
+            save.FlatAppearance.MouseDownBackColor = Color.DeepSkyBlue;
+            save.FlatAppearance.MouseOverBackColor = Color.DeepSkyBlue;
+            save.FlatStyle = FlatStyle.Flat;
+            save.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            save.ForeColor = SystemColors.ButtonHighlight;
+            save.Location = new Point(521, 419);
+            save.Name = "save";
+            save.Size = new Size(102, 35);
+            save.TabIndex = 27;
+            save.Text = "Save";
+            save.UseVisualStyleBackColor = false;
+            save.Click += save_Click;
+            // 
+            // txtcurrentpass
+            // 
+            txtcurrentpass.ForeColor = SystemColors.ActiveCaptionText;
+            txtcurrentpass.Location = new Point(347, 175);
+            txtcurrentpass.Name = "txtcurrentpass";
+            txtcurrentpass.Size = new Size(387, 27);
+            txtcurrentpass.TabIndex = 26;
+            txtcurrentpass.MaskInputRejected += txtcurrentpass_MaskInputRejected;
+            // 
+            // currentpassword
+            // 
+            currentpassword.AutoSize = true;
+            currentpassword.Font = new Font("Tw Cen MT Condensed", 12F, FontStyle.Bold);
+            currentpassword.ForeColor = SystemColors.ActiveCaptionText;
+            currentpassword.Location = new Point(141, 178);
+            currentpassword.Name = "currentpassword";
+            currentpassword.Size = new Size(139, 23);
+            currentpassword.TabIndex = 25;
+            currentpassword.Text = "Current Password:";
             // 
             // newpass
             // 
             newpass.AutoSize = true;
-            newpass.Location = new Point(175, 169);
+            newpass.Font = new Font("Tw Cen MT Condensed", 12F, FontStyle.Bold);
+            newpass.ForeColor = SystemColors.ActiveCaptionText;
+            newpass.Location = new Point(141, 234);
             newpass.Name = "newpass";
-            newpass.Size = new Size(107, 21);
+            newpass.Size = new Size(117, 23);
             newpass.TabIndex = 24;
             newpass.Text = "New Password:";
             // 
             // txtnewpass
             // 
-            txtnewpass.Location = new Point(318, 169);
+            txtnewpass.ForeColor = SystemColors.ActiveCaptionText;
+            txtnewpass.Location = new Point(347, 228);
             txtnewpass.Name = "txtnewpass";
-            txtnewpass.Size = new Size(439, 27);
+            txtnewpass.Size = new Size(387, 27);
             txtnewpass.TabIndex = 23;
+            txtnewpass.MaskInputRejected += txtnewpass_MaskInputRejected;
             // 
             // txtrepass
             // 
-            txtrepass.Location = new Point(318, 234);
+            txtrepass.ForeColor = SystemColors.ActiveCaptionText;
+            txtrepass.Location = new Point(347, 290);
             txtrepass.Name = "txtrepass";
-            txtrepass.Size = new Size(439, 27);
+            txtrepass.Size = new Size(387, 27);
             txtrepass.TabIndex = 21;
+            txtrepass.MaskInputRejected += txtrepass_MaskInputRejected;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(175, 234);
+            label6.Font = new Font("Tw Cen MT Condensed", 12F, FontStyle.Bold);
+            label6.ForeColor = SystemColors.ActiveCaptionText;
+            label6.Location = new Point(141, 290);
             label6.Name = "label6";
-            label6.Size = new Size(128, 21);
+            label6.Size = new Size(141, 23);
             label6.TabIndex = 20;
             label6.Text = "Re-Type Password:";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(175, 52);
+            label8.Font = new Font("Tw Cen MT Condensed", 12F, FontStyle.Bold);
+            label8.ForeColor = SystemColors.ActiveCaptionText;
+            label8.Location = new Point(141, 124);
             label8.Name = "label8";
-            label8.Size = new Size(77, 21);
+            label8.Size = new Size(85, 23);
             label8.TabIndex = 18;
             label8.Text = "Username:";
             // 
             // txtusername
             // 
-            txtusername.Location = new Point(318, 52);
+            txtusername.ForeColor = SystemColors.ActiveCaptionText;
+            txtusername.Location = new Point(347, 121);
             txtusername.Name = "txtusername";
-            txtusername.Size = new Size(439, 27);
+            txtusername.Size = new Size(387, 27);
             txtusername.TabIndex = 17;
+            txtusername.MaskInputRejected += txtusername_MaskInputRejected;
             // 
             // tabPage3
             // 
@@ -306,57 +362,21 @@
             tabPage3.Location = new Point(4, 30);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(994, 415);
+            tabPage3.Size = new Size(994, 508);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Activate/Deactivate Account";
             // 
-            // currentpassword
+            // textBox1
             // 
-            currentpassword.AutoSize = true;
-            currentpassword.Location = new Point(175, 105);
-            currentpassword.Name = "currentpassword";
-            currentpassword.Size = new Size(128, 21);
-            currentpassword.TabIndex = 25;
-            currentpassword.Text = "Current Password:";
-            // 
-            // txtcurrentpass
-            // 
-            txtcurrentpass.Location = new Point(318, 107);
-            txtcurrentpass.Name = "txtcurrentpass";
-            txtcurrentpass.Size = new Size(439, 27);
-            txtcurrentpass.TabIndex = 26;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Crimson;
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatAppearance.MouseDownBackColor = Color.Red;
-            button1.FlatAppearance.MouseOverBackColor = Color.Red;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(841, 351);
-            button1.Name = "button1";
-            button1.Size = new Size(105, 35);
-            button1.TabIndex = 28;
-            button1.Text = "Cancel";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.CornflowerBlue;
-            button2.FlatAppearance.BorderSize = 2;
-            button2.FlatAppearance.MouseDownBackColor = Color.DeepSkyBlue;
-            button2.FlatAppearance.MouseOverBackColor = Color.DeepSkyBlue;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(733, 351);
-            button2.Name = "button2";
-            button2.Size = new Size(102, 35);
-            button2.TabIndex = 27;
-            button2.Text = "Save";
-            button2.UseVisualStyleBackColor = false;
+            textBox1.BackColor = Color.Lavender;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.ForeColor = SystemColors.ActiveCaptionText;
+            textBox1.Location = new Point(388, 33);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(194, 25);
+            textBox1.TabIndex = 18;
+            textBox1.Text = "Manage Accounts";
             // 
             // user
             // 
@@ -365,12 +385,9 @@
             BackColor = SystemColors.Control;
             ClientSize = new Size(1002, 540);
             Controls.Add(tabControl1);
-            Controls.Add(panel1);
             Name = "user";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "user";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -380,10 +397,6 @@
         }
 
         #endregion
-
-        private Panel panel1;
-        private Button addbtn;
-        private Label label1;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
@@ -392,12 +405,12 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private MaskedTextBox maskedTextBox1;
-        public Button Csncelbtn;
+        private MaskedTextBox username;
+        public Button Cancelbtn;
         public Button Savebtn;
-        private MaskedTextBox maskedTextBox4;
-        private MaskedTextBox maskedTextBox3;
-        private ComboBox comboBox1;
+        private MaskedTextBox pass;
+        private MaskedTextBox retypepass;
+        private ComboBox role;
         private MaskedTextBox maskedTextBox2;
         private MaskedTextBox txtrepass;
         private Label label6;
@@ -408,7 +421,9 @@
         private MaskedTextBox txtnewpass;
         private Label currentpassword;
         private MaskedTextBox txtcurrentpass;
-        public Button button1;
-        public Button button2;
+        public Button cancel;
+        public Button save;
+        private TextBox textBox2;
+        private TextBox textBox1;
     }
 }
